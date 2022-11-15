@@ -99,17 +99,18 @@ class SignUpScreen extends StatelessWidget {
                         SizedBox(
                           height: 50,
                           child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18),
-                              )),
-                              onPressed: () {},
-                              child: const Text(
-                                'Cadastrar usuário',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                ),
-                              )),
+                            style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18),
+                            )),
+                            onPressed: () {},
+                            child: const Text(
+                              'Cadastrar usuário',
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
                         )
                       ],
                     ),
