@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:kitanda/src/auth/components/custom_text_field.dart';
 import 'package:kitanda/src/utils/custom_colors.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+  SignUpScreen({Key? key}) : super(key: key);
+
+  final cpfFormatted = MaskTextInputFormatter(
+    mask: '###.###.###-##',
+    filter: {
+      '#': RegExp(r'[0-9]'),
+    },
+  );
+
+  final phoneFormatted = MaskTextInputFormatter(
+    mask: '## # ####-####',
+    filter: {
+      '#': RegExp(r'[0-9]'),
+    },
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -71,13 +86,15 @@ class SignUpScreen extends StatelessWidget {
                           icon: Icons.person,
                           label: 'Nome',
                         ),
-                        const CustomTextField(
+                        CustomTextField(
                           icon: Icons.phone,
                           label: 'Celular',
+                          inputFormatters: [phoneFormatted],
                         ),
-                        const CustomTextField(
+                        CustomTextField(
                           icon: Icons.file_copy,
                           label: 'CPF',
+                          inputFormatters: [cpfFormatted],
                         ),
                         SizedBox(
                           height: 50,
